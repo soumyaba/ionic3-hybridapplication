@@ -1,0 +1,64 @@
+// page-signin {}
+.signintext {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    ;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img_width {
+    width: 100% !important;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.text-input {
+    margin-left: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: calc(100% - 8px);
+    border-bottom: 1px solid #ddd;
+}
+
+.divcolor {
+    background: #3D7CA8;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.backimage {
+    background-image: url('../assets/imgs/signinback.jpg');
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.color {
+    color: #246275;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.fontsize {
+    font-size: 118px;
+    color: #fff;
+}
+
+.background_toast_usename .toast-container {
+    background-color: #EC3737;
+}
+
+// .input-cover {
+//     background-color: #e8e6e6 !important;
+//     color: #000 !important;
+// }
