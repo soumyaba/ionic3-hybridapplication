@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, NavPush, Nav, ToastController } fr
 import { PasswordPage } from '../password/password';
 import { HomePage } from '../home/home';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CreatePage } from '../create/create';
 
 /**
  * Generated class for the SigninPage page.
@@ -19,10 +20,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class SigninPage implements OnInit {
   public passwordPage: any;
   public homePage: any;
+  public createPage: any;
   public signinform: FormGroup;
   constructor(public navCtrl: NavController, public navParams: NavParams, private fb:FormBuilder, private nav:Nav, public toastCtrl: ToastController) {
     this.passwordPage = PasswordPage;
     this.homePage = HomePage;
+    this.createPage = CreatePage
   }
 ngOnInit() {
   this.signinform =this.fb.group({
@@ -38,13 +41,13 @@ signin(signinform) {
   if(signinform.value.username === ''){
 let empty = 'Username is required';
 this.presentToast(empty);
- }else if(signinform.value.username !== 'username') {
+ }else if(signinform.value.username !== localStorage.getItem('username')) {
 let text = 'Username is invalid';
 this.presentToast(text);
   }else if(signinform.value.password === '') {
     let text = 'Password is required';
     this.presentToast(text);
-  }else if(signinform.value.password !== 'password') {
+  }else if(signinform.value.password !== localStorage.getItem('password')) {
     let text = 'Invalid Password';
     this.presentToast(text);
   }else {

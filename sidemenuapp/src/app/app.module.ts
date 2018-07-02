@@ -11,7 +11,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SigninPage } from '../pages/signin/signin';
 import { PasswordPage } from '../pages/password/password';
 import { CreatePage } from '../pages/create/create';
-
+import { AuthServiceeProvider } from '../providers/auth-servicee/auth-servicee';
+import { EmailComposer } from '@ionic-native/email-composer';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +24,11 @@ import { CreatePage } from '../pages/create/create';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {}, {
+      links:[
+        {component:HomePage, name:"Home", segment:""}
+    ]
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +42,9 @@ import { CreatePage } from '../pages/create/create';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceeProvider,
+    EmailComposer
   ]
 })
 export class AppModule {}
